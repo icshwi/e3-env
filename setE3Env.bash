@@ -21,14 +21,22 @@
 # email  : jeonghan.lee@gmail.com
 
 
-SRC="${BASH_SOURCE[0]}"
-SRC_DIR="$( cd -P "$( dirname "$SRC" )" && pwd )"
+base_ver=$1
+require_ver=$2
+
+if [ -z "$base_ver" ]; then
+    base_ver="3.15.4"
+fi
+
+if [ -z "$require_ver" ]; then
+    require_ver="2.5.3"
+fi
 
 
 export EPICS_HOST_ARCH=linux-x86_64
-export EPICS_BASE=/eee/bases/base-3.15.4
-export REQUIRE_BIN=/eee/modules/require/2.5.3/bin
-#
+export EPICS_BASE=/e3/bases/base-${base_ver}
+export REQUIRE_BIN=/e3/modules/require/${require_ver}/bin
+
 # Static PATH and LD_LIBRARY_PATH
 # 
 export PATH=${REQUIRE_BIN}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
