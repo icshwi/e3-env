@@ -40,7 +40,7 @@ if [ -z "$base_ver" ]; then
 fi
 
 if [ -z "$require_ver" ]; then
-    require_ver="2.5.4-pre0"
+    require_ver="2.5.3"
 fi
 
 
