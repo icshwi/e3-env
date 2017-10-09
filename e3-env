@@ -32,6 +32,13 @@ export CROSS_COMPILER_TARGET_ARCHS
 # PSI/ESS
 REQUIRE:=require
 
+# REQUIRE Version is more than EPICS BASE version
+# It should be in the GLOBAL environment
+#
+# ESS : Install Require TAG
+REQUIRE_MODULE_TAG:=require_2_5_3
+
+
 # ESS
 REQUIRE_VERSION:=2.5.4-pre0
 
