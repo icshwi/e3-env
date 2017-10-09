@@ -21,24 +21,43 @@
 # email  : jeonghan.lee@gmail.com
 
 
+unset EPICS_HOST_ARCH
+unset EPICS_BASE
+unset EPICS
+unset REQUIRE_PATH
+unset REQUIRE_VERSION
+unset LD_LIBRARY_PATH
+unset PATH
+
 base_ver=$1
 require_ver=$2
+
+EPICS_LOCATION=/e3/bases
+EPICS_MODULES=/e3/modules
 
 if [ -z "$base_ver" ]; then
     base_ver="3.15.4"
 fi
 
 if [ -z "$require_ver" ]; then
-    require_ver="2.5.3"
+    require_ver="2.5.4-pre0"
 fi
 
 
 export EPICS_HOST_ARCH=linux-x86_64
-export EPICS_BASE=/e3/bases/base-${base_ver}
-export REQUIRE_BIN=/e3/modules/require/${require_ver}/bin
+export EPICS=${EPICS_LOCATION}
+export EPICS_MODULES
+
+export REQUIRE=require
+export REQUIRE_VERSION=${require_ver}
+export EPICS_BASE=${EPICS}/base-${base_ver}
+export REQUIRE_PATH=${EPICS_MODULES}/${REQUIRE}/${REQUIRE_VERSION}
+export REQUIRE_BIN=${REQUIRE_PATH}/bin
+export REQUIRE_LIB=${REQUIRE_PATH}/lib
+
 
 # Static PATH and LD_LIBRARY_PATH
 # 
 export PATH=${REQUIRE_BIN}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
-export LD_LIBRARY_PATH=${EPICS_BASE}/lib/${EPICS_HOST_ARCH}
+export LD_LIBRARY_PATH=${EPICS_BASE}/lib/${EPICS_HOST_ARCH}:${REQUIRE_LIB}/${EPICS_HOST_ARCH}
 
