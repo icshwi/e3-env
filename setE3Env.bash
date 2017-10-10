@@ -35,12 +35,14 @@ require_ver=$2
 EPICS_LOCATION=/e3/bases
 EPICS_MODULES=/e3/modules
 
-if [ -z "$base_ver" ]; then
-    base_ver="3.15.4"
-fi
 
 if [ -z "$require_ver" ]; then
     require_ver="2.5.3"
+fi
+
+
+if [ -z "$base_ver" ]; then
+    base_ver="3.15.4"
 fi
 
 
@@ -48,12 +50,19 @@ export EPICS_HOST_ARCH=linux-x86_64
 export EPICS=${EPICS_LOCATION}
 export EPICS_MODULES
 
+
+export EPICS_BASE=${EPICS}/base-${base_ver}
+
+
+# Select REQUIRE Environment Variables
+
 export REQUIRE=require
 export REQUIRE_VERSION=${require_ver}
-export EPICS_BASE=${EPICS}/base-${base_ver}
 export REQUIRE_PATH=${EPICS_MODULES}/${REQUIRE}/${REQUIRE_VERSION}
+
 export REQUIRE_BIN=${REQUIRE_PATH}/bin
-export REQUIRE_LIB=${REQUIRE_PATH}/lib
+export REQUIRE_LIB=${REQUIRE_PATH}/R${base_ver}/lib
+export REQUIRE_DBD=${REQUIRE_PATH}/R${base_ver}/dbd
 
 
 # Static PATH and LD_LIBRARY_PATH
