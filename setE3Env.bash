@@ -19,11 +19,21 @@
 # email  : jeonghan.lee@gmail.com
 
 
+unset EPICS_LOCATION
+unset EPICS_MODULES
+
 unset EPICS_HOST_ARCH
-unset EPICS_BASE
 unset EPICS
-unset REQUIRE_PATH
+unset EPICS_BASE
+
+unset REQUIRE
 unset REQUIRE_VERSION
+unset REQUIRE_PATH
+
+unset REQUIRE_BIN
+unset REQUIRE_LIB
+unset REQUIRE_DBD
+
 unset LD_LIBRARY_PATH
 unset PATH
 
