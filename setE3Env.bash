@@ -1,5 +1,3 @@
-#!/bin/bash
-#
 #  Copyright (c) 2016 Jeong Han Lee
 #  Copyright (c) 2016 European Spallation Source ERIC
 #
