@@ -36,8 +36,11 @@ REQUIRE:=require
 # It should be in the GLOBAL environment
 #
 # ESS : Install Require TAG
-REQUIRE_MODULE_TAG:=require_2_5_3
-
+# REQUIRE_MODULE_TAG:=require_2_5_3
+# require doesn't have the working release (TAG) for EPICS 3.15.X
+# we have to use the specific hash id
+# Latest commit ab1def7 on Aug 30 
+REQUIRE_MODULE_HASH:=ab1def7 
 
 # ESS :
 REQUIRE_VERSION:=$(subst _,.,$(REQUIRE_MODULE_TAG:require_%=%))
