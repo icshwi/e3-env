@@ -58,3 +58,8 @@ REQUIRE_TOOLS:=$(REQUIRE_PATH)/tools
 # ESS
 # bin should have the iocsh script in the $(REQUIRE)/
 REQUIRE_BIN:=$(REQUIRE_PATH)/bin
+
+
+export REQUIRE_PATH
+export REQUIRE_TOOLS
+export REQUIRE_BIN
