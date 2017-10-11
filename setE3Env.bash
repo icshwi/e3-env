@@ -35,7 +35,7 @@ EPICS_MODULES=/e3/modules
 
 
 if [ -z "$require_ver" ]; then
-    require_ver="2.5.3"
+    require_ver="ab1def7"
 fi
 
 
