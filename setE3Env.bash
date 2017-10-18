@@ -1,5 +1,5 @@
-#  Copyright (c) 2016 Jeong Han Lee
-#  Copyright (c) 2016 European Spallation Source ERIC
+#  Copyright (c) 2016 - Present  Jeong Han Lee
+#  Copyright (c) 2016            European Spallation Source ERIC
 #
 #  The program is free software: you can redistribute
 #  it and/or modify it under the terms of the GNU General Public License
@@ -14,17 +14,17 @@
 #  You should have received a copy of the GNU General Public License along with
 #  this program. If not, see https://www.gnu.org/licenses/gpl-2.0.txt
 #
-# Shell  : setEpicsEnv.bash
+# Shell  : setE3Env.bash
 # Author : Jeong Han Lee
 # email  : jeonghan.lee@gmail.com
 
 
 unset EPICS_LOCATION
 unset EPICS_MODULES
-unset EPICS_DRIVER_PATH
-unset EPICS_HOST_ARCH
 unset EPICS
+unset EPICS_DRIVER_PATH
 unset EPICS_BASE
+unset EPICS_HOST_ARCH
 
 unset REQUIRE
 unset REQUIRE_VERSION
@@ -34,34 +34,32 @@ unset REQUIRE_BIN
 unset REQUIRE_LIB
 unset REQUIRE_DBD
 
-unset LD_LIBRARY_PATH
 unset PATH
+unset LD_LIBRARY_PATH
+
 
 base_ver=$1
 require_ver=$2
 
-
 if [ -z "$require_ver" ]; then
-    require_ver="ab1def7"
+    require_ver="0.0.1"
 fi
-
 
 if [ -z "$base_ver" ]; then
     base_ver="3.15.4"
 fi
 
 
-export EPICS_LOCATION=/e3/bases
-export EPICS_MODULES=/e3/modules
+ESS_EPICS_PATH=/epics
 
-export EPICS_HOST_ARCH=linux-x86_64
+export EPICS_LOCATION=$ESS_EPICS_PATH}/bases
+export EPICS_MODULES=${ESS_EPICS_PATH}/modules
+
 export EPICS=${EPICS_LOCATION}
-
 export EPICS_DRIVER_PATH=${EPICS_MODULES}
-
-
 export EPICS_BASE=${EPICS}/base-${base_ver}
-
+EPICS_HOST_ARCH=$(${EPICS_BASE}/startup/EpicsHostArch.pl)
+export EPICS_HOST_ARCH
 
 # Select REQUIRE Environment Variables
 
@@ -77,5 +75,5 @@ export REQUIRE_DBD=${REQUIRE_PATH}/R${base_ver}/dbd
 # Static PATH and LD_LIBRARY_PATH
 # 
 export PATH=${REQUIRE_BIN}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
-export LD_LIBRARY_PATH=${EPICS_BASE}/lib/${EPICS_HOST_ARCH}:${REQUIRE_LIB}/${EPICS_HOST_ARCH}
+export LD_LIBRARY_PATH=${EPICS_BASE}/lib/${EPICS_HOST_ARCH}:${REQUIRE_LIB}/${EPICS_HOST_ARCH}:/usr/local/lib
 

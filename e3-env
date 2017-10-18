@@ -32,21 +32,21 @@ export CROSS_COMPILER_TARGET_ARCHS
 # PSI/ESS
 REQUIRE:=require
 
-# REQUIRE Version is more than EPICS BASE version
-# It should be in the GLOBAL environment
-#
-# ESS : Install Require TAG
-# With git tag, tags/_git_tag_id 
-# REQUIRE_MODULE_TAG:=tags/require_2_5_3
-# require doesn't have the working release (TAG) for EPICS 3.15.X
-# we have to use the specific hash id
-# Latest commit ab1def7 on Aug 30
-# With git hash, _git_hash_id
+# This is the REQUIRE module source tag
+# *) individual tags
+#    export EPICS_MODULE_TAG:=tags/require_2_5_3
+# *) master branch 
+#    export EPICS_MODULE_TAG:=master
+# *) individual hash
 REQUIRE_MODULE_TAG:=ab1def7 
 
-# ESS :
-REQUIRE_VERSION:=$(subst _,.,$(REQUIRE_MODULE_TAG:require_%=%))
-
+# ESS
+# This is the ESS E3 require version
+# 
+# REQUIRE_VERSION:=$(subst _,.,$(REQUIRE_MODULE_TAG:require_%=%))
+# This should be changed e3-require tag number
+# 
+REQUIRE_VERSION:=0.0.1
 
 # ESS
 REQUIRE_PATH:=$(EPICS_MODULES)/$(REQUIRE)/$(REQUIRE_VERSION)
