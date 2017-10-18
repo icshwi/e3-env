@@ -40,9 +40,6 @@ unset PATH
 base_ver=$1
 require_ver=$2
 
-EPICS_LOCATION=/e3/bases
-EPICS_MODULES=/e3/modules
-
 
 if [ -z "$require_ver" ]; then
     require_ver="ab1def7"
