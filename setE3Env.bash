@@ -52,13 +52,14 @@ fi
 
 ESS_EPICS_PATH=/epics
 
-export EPICS_LOCATION=$ESS_EPICS_PATH}/bases
+export EPICS_LOCATION=${ESS_EPICS_PATH}/bases
 export EPICS_MODULES=${ESS_EPICS_PATH}/modules
 
 export EPICS=${EPICS_LOCATION}
 export EPICS_DRIVER_PATH=${EPICS_MODULES}
 export EPICS_BASE=${EPICS}/base-${base_ver}
-EPICS_HOST_ARCH=$(${EPICS_BASE}/startup/EpicsHostArch.pl)
+
+EPICS_HOST_ARCH=$("${EPICS_BASE}/startup/EpicsHostArch.pl")
 export EPICS_HOST_ARCH
 
 # Select REQUIRE Environment Variables
