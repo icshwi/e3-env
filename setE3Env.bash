@@ -21,7 +21,7 @@
 
 unset EPICS_LOCATION
 unset EPICS_MODULES
-
+unset EPICS_DRIVER_PATH
 unset EPICS_HOST_ARCH
 unset EPICS
 unset EPICS_BASE
@@ -54,9 +54,13 @@ if [ -z "$base_ver" ]; then
 fi
 
 
+export EPICS_LOCATION=/e3/bases
+export EPICS_MODULES=/e3/modules
+
 export EPICS_HOST_ARCH=linux-x86_64
 export EPICS=${EPICS_LOCATION}
-export EPICS_MODULES
+
+export EPICS_DRIVER_PATH=${EPICS_MODULES}
 
 
 export EPICS_BASE=${EPICS}/base-${base_ver}
