@@ -51,6 +51,7 @@ REQUIRE_VERSION:=0.0.1
 # ESS
 REQUIRE_PATH:=$(EPICS_MODULES)/$(REQUIRE)/$(REQUIRE_VERSION)
 
+
 # ESS
 # tools should have the same files in the $(REQUIRE)/App/tools
 # * driver.makefile
@@ -65,6 +66,9 @@ REQUIRE_TOOLS:=$(REQUIRE_PATH)/tools
 REQUIRE_BIN:=$(REQUIRE_PATH)/bin
 
 
+export REQUIRE
+export REQUIRE_MODULE_TAG
+export REQUIRE_VERSION
 export REQUIRE_PATH
 export REQUIRE_TOOLS
 export REQUIRE_BIN
