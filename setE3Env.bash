@@ -34,8 +34,8 @@ unset REQUIRE_BIN
 unset REQUIRE_LIB
 unset REQUIRE_DBD
 
-unset PATH
-unset LD_LIBRARY_PATH
+#unset PATH
+#unset LD_LIBRARY_PATH
 
 
 base_ver=$1
@@ -75,6 +75,6 @@ export REQUIRE_DBD=${REQUIRE_PATH}/R${base_ver}/dbd
 
 # Static PATH and LD_LIBRARY_PATH
 # 
-export PATH=${REQUIRE_BIN}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games
-export LD_LIBRARY_PATH=${EPICS_BASE}/lib/${EPICS_HOST_ARCH}:${REQUIRE_LIB}/${EPICS_HOST_ARCH}:/usr/local/lib
+export PATH=${REQUIRE_BIN}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}:${PATH}
+export LD_LIBRARY_PATH=${EPICS_BASE}/lib/${EPICS_HOST_ARCH}:${REQUIRE_LIB}/${EPICS_HOST_ARCH}:/usr/local/lib:${LD_LIBRARY_PATH}
 
