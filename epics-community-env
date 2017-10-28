@@ -26,5 +26,14 @@ M_MOTOR:=$(COMMUNITY_EPICS_MODULES)/motor
 #BASE[o], DEVLIB2[o], DEVIOCSTATS[o], AUTOSAVE[x], CAPUTLOG[x]
 M_MRFIOC2:=$(COMMUNITY_EPICS_MODULES)/mrfioc2
 
+export M_IOCSTATS
 export M_DEVLIB2
 export M_MRFIOC2
+export M_AUTOSAVE
+export M_SNCSEQ
+export M_IPAC
+export M_SSCAN
+export M_BUSY
+export M_MODBUS
+export M_STREAM
+export M_CALC
