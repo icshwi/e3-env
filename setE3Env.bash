@@ -13,11 +13,13 @@
 #
 #  You should have received a copy of the GNU General Public License along with
 #  this program. If not, see https://www.gnu.org/licenses/gpl-2.0.txt
+# 
+#   Shell   : setE3Env.bash
+#   Author  : Jeong Han Lee
+#   email   : jeonghan.lee@gmail.com
+#   date    : Monday, November  6 13:20:04 CET 2017
 #
-# Shell  : setE3Env.bash
-# Author : Jeong Han Lee
-# email  : jeonghan.lee@gmail.com
-
+#   version : 0.0.1
 
 
 unset ESS_ETHERLAB_LIB
@@ -67,7 +69,10 @@ export EPICS_LOCATION=${ESS_EPICS_PATH}/bases
 export EPICS_MODULES=${ESS_EPICS_PATH}/modules
 
 export EPICS=${EPICS_LOCATION}
-export EPICS_DRIVER_PATH=${EPICS_MODULES}:
+
+# shared libs seach directory by require.c
+#
+export EPICS_DRIVER_PATH=${EPICS_MODULES}:${ESS_ETHERLAB_LIB}
 export EPICS_BASE=${EPICS}/base-${base_ver}
 
 EPICS_HOST_ARCH=$("${EPICS_BASE}/startup/EpicsHostArch.pl")
