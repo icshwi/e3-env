@@ -42,3 +42,8 @@ e3-env defines
 * REQUIRE_BIN  : ${REQUIRE_PATH}/bin
 * REQUIRE_LIB  : ${REQUIRE_PATH}/R${base_ver}/lib
 * REQUIRE_DBD  : ${REQUIRE_PATH}/R${base_ver}/dbd
+
+
+## REMEMBER
+* When one change, add, or remove e3-env EPICS BASE versions (aka EPICS_BASE_TAG), default epics base version in setE3Env.bash should be one of EPICS_BASE_TAG.
+
