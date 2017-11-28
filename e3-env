@@ -38,7 +38,7 @@ REQUIRE:=require
 # *) master branch 
 #    export EPICS_MODULE_TAG:=master
 # *) individual hash
-REQUIRE_MODULE_TAG:=ab1def7 
+REQUIRE_MODULE_TAG:=master 
 
 # ESS
 # This is the ESS E3 require version
@@ -46,7 +46,7 @@ REQUIRE_MODULE_TAG:=ab1def7
 # REQUIRE_VERSION:=$(subst _,.,$(REQUIRE_MODULE_TAG:require_%=%))
 # This should be changed e3-require tag number
 # 
-REQUIRE_VERSION:=0.0.1
+REQUIRE_VERSION:=2.5.4
 
 # ESS
 REQUIRE_PATH:=$(EPICS_MODULES)/$(REQUIRE)/$(REQUIRE_VERSION)
