@@ -50,7 +50,7 @@ base_ver=$1
 require_ver=$2
 
 if [ -z "$require_ver" ]; then
-    require_ver="0.0.1"
+    require_ver="2.5.4"
 fi
 
 if [ -z "$base_ver" ]; then
