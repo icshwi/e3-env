@@ -17,14 +17,22 @@
 #   Shell   : setE3Env.bash
 #   Author  : Jeong Han Lee
 #   email   : jeonghan.lee@gmail.com
-#   date    : Monday, November  6 13:20:04 CET 2017
+#   date    : Monday, December  4 13:25:21 CET 2017
 #
-#   version : 0.0.1
+#   version : 0.0.2
 
 
 unset ESS_ETHERLAB_LIB
 unset ESS_ETHERLAB_BIN
 unset ESS_ETHERLAB_SBIN
+
+
+unset ESS_LIBS
+
+unset ESS_OPCUA
+unset ESS_OPCUA_LIB
+unset ESS_OPCUA_BIN
+unset ESS_OPCUA_INC
 
 unset EPICS_LOCATION
 unset EPICS_MODULES
@@ -59,7 +67,15 @@ fi
 
 
 ESS_EPICS_PATH=/epics
+ESS_LIBS=/opt/ess
 ESS_ETHERLAB=/opt/etherlab
+ESS_OPCUA=${ESS_LIBS}/opcUa
+#ESS_ETHERLAB=${ESS_LIBS}/etherlab
+
+export ESS_OPCUA_LIB=${ESS_OPCUA}/lib
+export ESS_OPCUA_INC=${ESS_OPCUA}/include
+export ESS_OPCUA_BIN=${ESS_OPCUA}/bin
+
 
 export ESS_ETHERLAB_LIB=${ESS_ETHERLAB}/lib
 export ESS_ETHERLAB_BIN=${ESS_ETHERLAB}/bin
@@ -88,8 +104,8 @@ export REQUIRE_BIN=${REQUIRE_PATH}/bin
 export REQUIRE_LIB=${REQUIRE_PATH}/R${base_ver}/lib
 export REQUIRE_DBD=${REQUIRE_PATH}/R${base_ver}/dbd
 
-export PATH=${REQUIRE_BIN}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin:${HOME}/bin:${ESS_ETHERLAB_BIN}:${ESS_ETHERLAB_SBIN}
+export PATH=${REQUIRE_BIN}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin:${HOME}/bin:${ESS_ETHERLAB_BIN}:${ESS_ETHERLAB_SBIN}:${ESS_OPCUA_BIN}
 
-export LD_LIBRARY_PATH=${EPICS_BASE}/lib/${EPICS_HOST_ARCH}:${REQUIRE_LIB}/${EPICS_HOST_ARCH}:/usr/local/lib:${HOME}/lib:${ESS_ETHERLAB_LIB}
+export LD_LIBRARY_PATH=${EPICS_BASE}/lib/${EPICS_HOST_ARCH}:${REQUIRE_LIB}/${EPICS_HOST_ARCH}:/usr/local/lib:${HOME}/lib:${ESS_ETHERLAB_LIB}:${ESS_OPCUA_LIB}
 
 
