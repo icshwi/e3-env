@@ -65,6 +65,9 @@ if [ -z "$base_ver" ]; then
     base_ver="3.15.5"
 fi
 
+# shared libs seach directory by require.c
+#
+# EPICS_DRIVER_PATH
 
 ESS_EPICS_PATH=/epics
 ESS_LIBS=/opt/ess
@@ -88,7 +91,8 @@ export EPICS=${EPICS_LOCATION}
 
 # shared libs seach directory by require.c
 #
-export EPICS_DRIVER_PATH=${EPICS_MODULES}:${ESS_ETHERLAB_LIB}
+# EPICS_DRIVER_PATH
+export EPICS_DRIVER_PATH=${EPICS_MODULES}:${ESS_ETHERLAB_LIB}:${ESS_OPCUA_LIB}
 export EPICS_BASE=${EPICS}/base-${base_ver}
 
 EPICS_HOST_ARCH=$("${EPICS_BASE}/startup/EpicsHostArch.pl")
@@ -107,5 +111,4 @@ export REQUIRE_DBD=${REQUIRE_PATH}/R${base_ver}/dbd
 export PATH=${REQUIRE_BIN}:${EPICS_BASE}/bin/${EPICS_HOST_ARCH}:/usr/local/bin:/usr/bin:/bin:/usr/local/games:/usr/games:/sbin:${HOME}/bin:${ESS_ETHERLAB_BIN}:${ESS_ETHERLAB_SBIN}:${ESS_OPCUA_BIN}
 
 export LD_LIBRARY_PATH=${EPICS_BASE}/lib/${EPICS_HOST_ARCH}:${REQUIRE_LIB}/${EPICS_HOST_ARCH}:/usr/local/lib:${HOME}/lib:${ESS_ETHERLAB_LIB}:${ESS_OPCUA_LIB}
-
 
