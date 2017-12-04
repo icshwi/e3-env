@@ -92,7 +92,7 @@ export EPICS=${EPICS_LOCATION}
 # shared libs seach directory by require.c
 #
 # EPICS_DRIVER_PATH
-export EPICS_DRIVER_PATH=${EPICS_MODULES}:${ESS_ETHERLAB_LIB}:${ESS_OPCUA_LIB}
+export EPICS_DRIVER_PATH=${EPICS_MODULES}:${ESS_ETHERLAB_LIB}
 export EPICS_BASE=${EPICS}/base-${base_ver}
 
 EPICS_HOST_ARCH=$("${EPICS_BASE}/startup/EpicsHostArch.pl")
