@@ -35,3 +35,7 @@ export EPICS_BASE:=$(TOP)/$(EPICS_BASE_NAME)
 # EPICS community, MUST use export 
 export EPICS_HOST_ARCH := $(shell $(EPICS_BASE)/startup/EpicsHostArch.pl)
 
+
+
+
+
