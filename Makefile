@@ -49,3 +49,5 @@ env:
 	@echo ""
 
 
+init:
+	@echo "dummy init"
