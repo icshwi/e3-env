@@ -17,9 +17,9 @@
 #   Shell   : setE3Env.bash
 #   Author  : Jeong Han Lee
 #   email   : jeonghan.lee@gmail.com
-#   date    : Monday, December  4 13:25:21 CET 2017
+#   date    : Tuesday, April 17 09:04:52 CEST 2018
 #
-#   version : 0.0.2
+#   version : 0.0.3
 
 
 unset ESS_ETHERLAB_LIB
@@ -69,7 +69,7 @@ fi
 #
 # EPICS_DRIVER_PATH
 
-ESS_EPICS_PATH=/epics
+ESS_EPICS_PATH=/e3/epics
 #ESS_LIBS=/opt/ess
 ESS_ETHERLAB=/opt/etherlab
 #ESS_OPCUA=${ESS_LIBS}/opcUa
